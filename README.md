@@ -16,5 +16,6 @@ With the necessary dependencies installed, this project should be ready to run o
 
 ## Thank you
 
-Thank you for reading, and I appreciate that you took the time to check out my project!  
+Thank you for reading, and I appreciate that you took the time to check out my project!
+
 There is still a long way to go for my learning, and I will keep updating as I learn more. Any advice for this project or front-end skills, in general, will be appreciated. Thanks!
