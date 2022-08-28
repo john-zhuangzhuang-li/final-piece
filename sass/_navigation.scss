@@ -1,0 +1,19 @@
+.navigation {
+  grid-column: center;
+  grid-row: top;
+  z-index: 700;
+  opacity: 50;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 1.5rem;
+
+  & h3 {
+    text-transform: uppercase;
+  }
+
+  &__logo {
+    height: 3rem;
+    width: 3rem;
+  }
+}

@@ -1,0 +1,52 @@
+.certificates {
+  grid-row: certificates;
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--spacing-list-gap);
+  grid-column: center;
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: var(--spacing-list-gap);
+    row-gap: var(--spacing-list-gap);
+    list-style-type: none;
+
+    @media only screen and (max-width: $bp-md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media only screen and (max-width: $bp-sm) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__item {
+    padding: 1.6rem 0 0 0;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-accent-main);
+    border-radius: 0 0 2rem 2rem;
+    overflow: hidden;
+    box-shadow: var(--box-shadow-1);
+    transition: var(--transition-ease-in-out-1);
+    transform: translateY(0);
+
+    & > h3 {
+      font-size: 1.8rem;
+      font-weight: 400;
+    }
+
+    &:hover {
+      box-shadow: var(--box-shadow-2);
+      transform: translateY(-8px);
+    }
+  }
+
+  &__item-img {
+    width: 100%;
+    height: auto;
+  }
+}

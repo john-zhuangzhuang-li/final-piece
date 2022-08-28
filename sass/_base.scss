@@ -1,0 +1,185 @@
+$bp-hg: 125em; //2000
+$bp-xl-plus: 112.5em; //1800
+$bp-xl: 100em; //1600
+$bp-lg-plus: 87.5em; //1400
+$bp-lg: 75em; //1200
+$bp-md: 56.25em; //900
+$bp-sm: 37.5em; //600
+$bp-xs: 28.125em; //450
+$bp-xs-minus: 25em; //400
+
+:root {
+  --spacing-list-gap: 3rem;
+  --spacing-stack-gap: 1.5rem;
+  --border-radius-card: 3rem;
+  --border-radius-icon: 2rem;
+
+  --color-primary-main: #8d8daa;
+  --color-primary-light: #dfdfde;
+  --color-primary-dark: #636378;
+
+  --color-accent-main: #f56d91;
+  --color-accent-light: #f788a6;
+  --color-accent-dark: #ab4b65;
+
+  --color-background: #f7f5f2;
+
+  --color-grey-light-1: #eee;
+  --color-grey-light-2: #ccc;
+  --color-grey-light-3: #aaa;
+
+  --color-grey-dark-1: #333;
+  --color-grey-dark-2: #000;
+
+  --gradient-footer-card-1: radial-gradient(
+    circle farthest-corner at 10% 20%,
+    rgba(90, 92, 106, 1) 0%,
+    rgba(32, 45, 58, 1) 81.3%
+  );
+
+  --gradient-footer-card-2: radial-gradient(
+    circle farthest-corner at -4% -12.9%,
+    rgba(74, 98, 110, 1) 0.3%,
+    rgba(30, 33, 48, 1) 90.2%
+  );
+
+  --gradient-footer-card-3: linear-gradient(
+    90deg,
+    rgba(117, 117, 117, 1) 0%,
+    rgba(66, 66, 66, 1) 75%,
+    rgba(33, 33, 33, 1) 100%
+  );
+
+  --gradient-footer-card-4: linear-gradient(
+    90deg,
+    rgba(117, 117, 117, 1) 0%,
+    rgba(66, 66, 66, 1) 25%,
+    rgba(33, 33, 33, 1) 100%
+  );
+
+  --icon-border-1: 1px solid rgba(109, 93, 75, 0.35);
+  --icon-border-2: 1px solid rgba(109, 93, 75, 0.55);
+
+  --box-shadow-1: 0px 10px 20px 0px rgba(0, 0, 0, 0.15);
+  --box-shadow-1-inset: inset 0px 10px 20px 0px rgba(0, 0, 0, 0.15);
+  --box-shadow-2: 0px 18px 28px 3px rgba(0, 0, 0, 0.15);
+
+  --font-primary: "Merriweather Sans", sans-serif;
+
+  --transition-ease-in-out-1: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-primary);
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--color-grey-dark-2);
+  background-color: var(--color-background);
+
+  // SECTION TITLES
+  & h2 {
+    font-size: 2.5rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    align-self: center;
+  }
+
+  // PLAIN BODY TEXT
+  & p {
+    font-size: 1.6rem;
+  }
+}
+
+.container {
+  display: grid;
+  row-gap: 8rem;
+
+  grid-template-rows:
+    [top-start] 6rem [top-end header-start] calc(90vh - 6rem)
+    [header-end about-start]
+    min-content
+    [about-end portfolio-start]
+    min-content
+    [portfolio-end skills-start]
+    min-content
+    [skills-end certificates-start]
+    min-content
+    [certificates-end footer-start]
+    min-content
+    [footer-end];
+
+  grid-template-columns:
+    [full-start] 1fr [center-start]
+    repeat(6, [mid-start] 30rem [mid-end])
+    [center-end] 1fr [full-end];
+
+  @media only screen and (max-width: $bp-hg) {
+    grid-template-columns:
+      [full-start] 1fr [center-start]
+      repeat(6, [mid-start] 27.5rem [mid-end])
+      [center-end] 1fr [full-end];
+  }
+
+  @media only screen and (max-width: $bp-xl-plus) {
+    grid-template-columns:
+      [full-start] 1fr [center-start]
+      repeat(6, [mid-start] 25rem [mid-end])
+      [center-end] 1fr [full-end];
+  }
+
+  @media only screen and (max-width: $bp-xl) {
+    grid-template-columns:
+      [full-start] 1fr [center-start]
+      repeat(6, [mid-start] 20rem [mid-end])
+      [center-end] 1fr [full-end];
+  }
+
+  @media only screen and (max-width: $bp-lg-plus) {
+    grid-template-columns:
+      [full-start] 1fr [center-start]
+      repeat(6, [mid-start] 18.5rem [mid-end])
+      [center-end] 1fr [full-end];
+  }
+
+  @media only screen and (max-width: $bp-lg) {
+    grid-template-columns:
+      [full-start] 3rem [center-start]
+      repeat(6, [mid-start] 1fr [mid-end])
+      [center-end] 3rem [full-end];
+  }
+
+  // VERTICAL VIEW
+  @media only screen and (max-width: $bp-md) {
+    grid-template-rows:
+      [top-start] 6rem [top-end]
+      repeat(2, [header-start] min-content [header-end])
+      repeat(2, [about-start] min-content [about-end])
+      [portfolio-start]
+      min-content
+      [portfolio-end skills-start]
+      min-content
+      [skills-end certificates-start]
+      min-content
+      [certificates-end footer-start]
+      min-content
+      [footer-end];
+  }
+
+  @media only screen and (max-width: $bp-sm) {
+    row-gap: 3rem;
+  }
+}

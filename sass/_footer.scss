@@ -1,0 +1,111 @@
+.footer {
+  grid-row: footer;
+  grid-column: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: var(--spacing-list-gap);
+  padding: 6rem 0;
+
+  &__card {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 3rem 0 0 0;
+    background-color: var(--color-grey-light-1);
+    box-shadow: var(--box-shadow-1);
+  }
+
+  &__media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 1.5rem 4rem 3.25rem;
+
+    @media only screen and (max-width: $bp-sm) {
+      padding: 3.5rem 1rem 3.5rem 2.75rem;
+    }
+    @media only screen and (max-width: $bp-xs-minus) {
+      padding: 3.5rem 0.5rem 3.5rem 0.5rem;
+    }
+  }
+
+  &__image {
+    background-image: url(../img/card-img-01.png);
+    background-size: 75%;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 10rem;
+    width: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6rem;
+  }
+
+  &__content {
+    flex-grow: 1;
+    padding: 4rem 3.25rem 4rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: var(--spacing-stack-gap);
+
+    & h3 {
+      font-size: 1.6rem;
+      font-weight: 300;
+    }
+    & h5 {
+      font-size: 1.4rem;
+    }
+    & span {
+      font-size: 1.2rem;
+    }
+
+    @media only screen and (max-width: $bp-sm) {
+      padding: 3.5rem 2.75rem 3.5rem 1rem;
+    }
+    @media only screen and (max-width: $bp-xs-minus) {
+      padding: 3.5rem 1.5rem 3.5rem 0.5rem;
+
+      & h5 {
+        font-size: 1.2rem;
+      }
+      & p {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__action {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 1rem;
+    line-height: 1.8;
+  }
+
+  &__icon {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  &__legal {
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1rem;
+  }
+
+  &__legal img {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+}

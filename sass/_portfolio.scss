@@ -1,0 +1,160 @@
+.portfolio {
+  grid-row: portfolio;
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--spacing-list-gap);
+  grid-column: center;
+
+  @media only screen and (max-width: $bp-xs) {
+    grid-column: full;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--spacing-list-gap);
+    width: 100%;
+    list-style-type: none;
+  }
+
+  &__item {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(min-content, 1fr));
+    background-color: var(--color-primary-light);
+
+    @media only screen and (max-width: $bp-md) {
+      grid-template-columns: auto;
+      grid-auto-flow: row;
+    }
+  }
+
+  &__item--alt {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(min-content, 1fr));
+    background-color: var(--color-primary-main);
+
+    @media only screen and (max-width: $bp-md) {
+      grid-template-columns: auto;
+      grid-auto-flow: row;
+    }
+  }
+
+  &__item-media {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 3rem 6rem 0 6rem;
+
+    @media only screen and (max-width: $bp-xl-plus) {
+      padding: 3rem 2rem 0 3rem;
+    }
+
+    @media only screen and (max-width: $bp-lg) {
+      align-items: center;
+      padding: 3rem;
+    }
+
+    @media only screen and (max-width: $bp-md) {
+      grid-row: 2 / 3;
+      padding: 0 8rem;
+    }
+    @media only screen and (max-width: $bp-sm) {
+      padding: 0 3rem;
+    }
+  }
+
+  &__item-img-base {
+    display: flex;
+    align-items: flex-end;
+    border-radius: 2rem 2rem 0 0;
+    overflow: hidden;
+
+    @media only screen and (max-width: $bp-lg) {
+      align-items: center;
+      border-radius: 0;
+    }
+
+    @media only screen and (max-width: $bp-md) {
+      align-items: flex-end;
+      border-radius: 2rem 2rem 0 0;
+    }
+
+    & picture {
+      display: flex;
+      align-items: flex-end;
+    }
+  }
+
+  &__item-img {
+    width: 100%;
+    height: auto;
+  }
+
+  &__item-content {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--spacing-list-gap);
+    justify-content: center;
+    align-items: flex-start;
+    padding: 3rem 6rem;
+
+    & h3 {
+      font-size: 3.2rem;
+      font-weight: 300;
+    }
+
+    & h5 {
+      font-size: 1.8rem;
+      font-weight: 400;
+    }
+
+    @media only screen and (max-width: $bp-xl-plus) {
+      padding: 3rem 3rem 3rem 2rem;
+    }
+
+    @media only screen and (max-width: $bp-xl) {
+      row-gap: 1.5rem;
+
+      & h3 {
+        font-size: 2.5rem;
+        font-weight: 300;
+      }
+
+      & h5 {
+        font-size: 1.6rem;
+        font-weight: 400;
+      }
+    }
+
+    @media only screen and (max-width: $bp-lg) {
+      padding: 3rem;
+    }
+
+    @media only screen and (max-width: $bp-md) {
+      grid-row: 1 / 2;
+      padding: 3rem 8rem;
+    }
+
+    @media only screen and (max-width: $bp-sm) {
+      padding: 3rem;
+    }
+  }
+
+  &__tags {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    column-gap: var(--spacing-stack-gap);
+    row-gap: var(--spacing-stack-gap);
+    font-size: 1.6rem;
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    column-gap: var(--spacing-stack-gap);
+    row-gap: var(--spacing-stack-gap);
+    font-size: 1.6rem;
+  }
+}

@@ -1,0 +1,65 @@
+.skills {
+  grid-row: skills;
+  grid-column: center;
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--spacing-list-gap);
+  padding: 6rem 0;
+
+  &__list {
+    list-style-type: none;
+    display: flex;
+    column-gap: var(--spacing-list-gap);
+    row-gap: var(--spacing-list-gap);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  &__group {
+    display: flex;
+    column-gap: var(--spacing-list-gap);
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    width: 15rem;
+    height: 15rem;
+    row-gap: var(--spacing-stack-gap);
+    background-color: var(--color-background);
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--border-radius-card);
+    border: var(--icon-border-1);
+    box-shadow: var(--box-shadow-1);
+    transition: var(--transition-ease-in-out-1);
+    cursor: default;
+
+    & > h4 {
+      font-size: 1.5rem;
+      font-weight: 400;
+    }
+
+    @media only screen and (max-width: $bp-xs) {
+      width: 13.5rem;
+      height: 13.5rem;
+    }
+
+    &:hover {
+      color: #fff;
+      border: 1px solid var(--color-background);
+      background-color: var(--color-accent-main);
+      box-shadow: var(--box-shadow-1-inset);
+    }
+  }
+
+  &__icon {
+    width: 6.5rem;
+    height: 6.5rem;
+
+    @media only screen and (max-width: $bp-xs) {
+      width: 6rem;
+      height: 6rem;
+    }
+  }
+}
