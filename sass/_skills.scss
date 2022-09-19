@@ -5,6 +5,9 @@
   flex-direction: column;
   row-gap: var(--spacing-list-gap);
   padding: 6rem 0;
+  opacity: 1;
+  transform: translateY(0);
+  transition: var(--transition-ease-in-out-2);
 
   &__list {
     list-style-type: none;

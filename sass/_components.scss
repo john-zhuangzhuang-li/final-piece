@@ -119,21 +119,19 @@
   background-repeat: no-repeat;
   background-position: center;
   background-image: url(../img/main-photo-01c.jpg);
+  transition: filter 0.5s;
 
   // VERTICAL VIEW
   @media only screen and (max-width: $bp-md) {
     grid-row: header-start 2 / header-end 2;
     grid-column: center;
-    height: 60rem;
-  }
-
-  @media only screen and (max-width: $bp-sm) {
     height: 50rem;
   }
+}
 
-  @media only screen and (max-width: $bp-xs-minus) {
-    height: 40rem;
-  }
+.background--header-preview {
+  background-image: url(../img/main-photo-01c-preview.jpg);
+  filter: blur(10px);
 }
 
 .background--about {
@@ -141,7 +139,9 @@
   grid-row: about;
   height: 100%;
   z-index: 300;
-  transition: var(--transition-ease-in-out-1);
+  opacity: 1;
+  transform: translateX(0);
+  transition: var(--transition-ease-in-out-2);
   background-position: 60%;
   background-size: contain;
   background-repeat: no-repeat;
@@ -169,7 +169,17 @@
   }
 }
 
-// NOT USED
+.background--about--hidden {
+  opacity: 0;
+  transform: translateX(-10%);
+}
+
+.section--hidden {
+  opacity: 0;
+  transform: translateY(8rem);
+}
+
+// NOT USING
 
 // .background--skills {
 //   grid-row: bgskills;

@@ -4,6 +4,9 @@
   flex-direction: column;
   row-gap: var(--spacing-list-gap);
   grid-column: center;
+  opacity: 1;
+  transform: translateY(0);
+  transition: var(--transition-ease-in-out-2);
 
   &__list {
     display: grid;
